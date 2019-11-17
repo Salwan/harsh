@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://mockup/dust_devil.gd" type="Script" id=1]
+[ext_resource path="res://assets/mockup/devil.png" type="Texture" id=2]
+
+[node name="dust_devil" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 93.0 ]
+}
+MOVEMENT_SPEED = 10.0
+
+[node name="devil" type="Sprite" parent="."]
+position = Vector2( 48, -46 )
+texture = ExtResource( 2 )
+
+[node name="particles" type="CPUParticles2D" parent="."]
+visible = false
+amount = 50
+lifetime = 1.6
+preprocess = 1.0
+randomness = 1.0
+fixed_fps = 30
+emission_shape = 2
+emission_rect_extents = Vector2( 4, 4 )
+gravity = Vector2( 10, -98.8 )
+initial_velocity_random = 0.11
+radial_accel_random = 1.0
+tangential_accel = 3.25
+tangential_accel_random = 0.1
+scale_amount = 2.0
+scale_amount_random = 1.0

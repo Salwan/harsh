@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/mockup/hud.png" type="Texture" id=1]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="hud" type="Sprite" parent="."]
+position = Vector2( 228, 114 )
+texture = ExtResource( 1 )

@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/mockup/ground1.png" type="Texture" id=1]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 256, 18 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6, 60 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 7.74
+height = 8.52
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 6.0
+
+[node name="ground" type="StaticBody2D"]
+physics_material_override = SubResource( 1 )
+
+[node name="ground1" type="Sprite" parent="."]
+position = Vector2( 91, 98 )
+texture = ExtResource( 1 )
+offset = Vector2( 37, 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground2" type="Sprite" parent="."]
+position = Vector2( 347, 98 )
+texture = ExtResource( 1 )
+offset = Vector2( 37, 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground_barrier" type="CollisionShape2D" parent="."]
+position = Vector2( 256, 110 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="left_barrier" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 60 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="right_barrier" type="CollisionShape2D" parent="."]
+position = Vector2( 256, 60 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 91, 98 )
+rotation = 1.5708
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2( 346, 98 )
+rotation = 1.5708
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( 246, 99 )
+rotation = 1.5708
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2( 501, 99 )
+rotation = 1.5708
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 455, 96 )
+rotation = 1.5708
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2( 199, 96 )
+rotation = 1.5708
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}

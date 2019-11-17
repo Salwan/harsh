@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/land_ground.wav-3b0d12b81fadf8020bcc4a0eabfc097d.sample"
+
+[deps]
+
+source_file="res://assets/mockup/sfx/land_ground.wav"
+dest_files=[ "res://.import/land_ground.wav-3b0d12b81fadf8020bcc4a0eabfc097d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0
