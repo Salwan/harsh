@@ -7,23 +7,33 @@ const SLOPE_SLIDE_STOP = 0.25
 const JUMP_SPEED = 100.0
 
 var velocity:Vector2 = Vector2()
-var prev_on_floor:bool = false
+var bControl:bool = true
+var control_x:float = 0
+var control_y:float = 0
+
+func _ready():
+	var pc = get_node("/root/PlayerController")
+	pc.connect("player_run_up", self, "on_up")
+	pc.connect("player_run_down", self, "on_down")
+	pc.connect("player_run_left", self, "on_left")
+	pc.connect("player_run_right", self, "on_right")
 
 func _physics_process(delta:float):
-	### MOVEMENT ###
+	if not bControl:
+		control_x = 0
+		control_y = 0
+		return
+
+	# Movement
 	velocity = move_and_slide(velocity, FLOOR_NORMAL, true)
 	
-	### CONTROL ###
-	var target_speed_x:float = 0
-	var target_speed_y:float = 0
-	if Input.is_action_pressed("ui_left"):
-		target_speed_x -= 1
-	elif Input.is_action_pressed("ui_right"):
-		target_speed_x += 1
-	if Input.is_action_pressed("ui_up"):
-		target_speed_y -= 1
-	elif Input.is_action_pressed("ui_down"):
-		target_speed_y += 1
+	# Process Controls
+	var target_speed_x:float = control_x
+	var target_speed_y:float = control_y
+	## consume controls
+	control_x = 0
+	control_y = 0
+
 	if target_speed_x == 0 and target_speed_y == 0:
 		if $anim.current_animation != "idle":
 			$anim.play("idle")
@@ -41,7 +51,27 @@ func _physics_process(delta:float):
 	elif velocity.x > 0.0:
 		$chris.flip_h = false
 
+
 func on_step():
+	#$audStep.play()
 	pass
-	#if prev_on_floor:
-		#$audStep.play()
+
+func on_disable_controls():
+	$anim.play("idle")
+	velocity = Vector2(0, 0)
+	bControl = false
+
+func on_enable_controls():
+	bControl = true
+
+func on_right():
+	control_x = min(control_x + 1, 1)
+
+func on_left():
+	control_x = max(control_x - 1, -1)
+
+func on_down():
+	control_y = min(control_y + 1, 1)
+
+func on_up():
+	control_y = max(control_y - 1, -1)
