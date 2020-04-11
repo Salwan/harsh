@@ -12,11 +12,10 @@ var control_x:float = 0
 var control_y:float = 0
 
 func _ready():
-	var pc = get_node("/root/PlayerController")
-	pc.connect("player_run_up", self, "on_up")
-	pc.connect("player_run_down", self, "on_down")
-	pc.connect("player_run_left", self, "on_left")
-	pc.connect("player_run_right", self, "on_right")
+	PlayerController.connect("player_run_up", self, "on_up")
+	PlayerController.connect("player_run_down", self, "on_down")
+	PlayerController.connect("player_run_left", self, "on_left")
+	PlayerController.connect("player_run_right", self, "on_right")
 
 func _physics_process(delta:float):
 	if not bControl:

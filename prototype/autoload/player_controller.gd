@@ -61,3 +61,8 @@ func process_dialog():
 	if Input.is_action_just_pressed("control_back"):
 		emit_signal("dialog_exit")
 	
+func set_player_mode():
+	mode = EMode.MODE_PLAYER
+
+func set_dialog_mode():
+	mode = EMode.MODE_DIALOG

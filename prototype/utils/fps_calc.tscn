@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://prototype/assets/standard_font.res" type="DynamicFont" id=1]
+[ext_resource path="res://prototype/utils/fps_calc.gd" type="Script" id=2]
+
+[node name="fps_calc" type="Label"]
+margin_right = 56.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+text = "FPS: 60"
+align = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

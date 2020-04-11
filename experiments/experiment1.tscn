@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://experiments/experiment1.gd" type="Script" id=2]
+[ext_resource path="res://experiments/tree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://experiments/tree_meshinstance2d.tscn" type="PackedScene" id=4]
+[ext_resource path="res://experiments/tri_arraymesh.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 34, 33, -215.149, -90.9936, 215.149, 90.9936, 419, 112, 157.722, -69.1551, -157.722, 69.1551, 449, 338, 43.2725, 8.89715, -43.2725, -8.89715, 203, 409, 54.5962, 85.3318, -54.5962, -85.3318, 68, 263, 0, 0, 0, 0, 34, 33 )
+}
+
+[node name="experiment1" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="path" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="follow" type="PathFollow2D" parent="path"]
+position = Vector2( 34, 33 )
+rotation = -0.0506685
+
+[node name="ysort" type="YSort" parent="."]
+
+[node name="spr" type="Sprite" parent="ysort"]
+position = Vector2( 532, 73 )
+texture = ExtResource( 1 )
+
+[node name="icon" type="Sprite" parent="ysort"]
+position = Vector2( 176, 391 )
+texture = ExtResource( 1 )
+
+[node name="icon2" type="Sprite" parent="ysort"]
+position = Vector2( 136, 344 )
+texture = ExtResource( 1 )
+
+[node name="icon3" type="Sprite" parent="ysort"]
+position = Vector2( 96, 292 )
+texture = ExtResource( 1 )
+
+[node name="icon4" type="Sprite" parent="ysort"]
+position = Vector2( 65, 252 )
+texture = ExtResource( 1 )
+
+[node name="icon5" type="Sprite" parent="ysort"]
+position = Vector2( 45, 188 )
+texture = ExtResource( 1 )
+
+[node name="tree" parent="." instance=ExtResource( 3 )]
+position = Vector2( 197, 0 )
+
+[node name="tree_meshinstance2d" parent="." instance=ExtResource( 4 )]
+position = Vector2( 72, 0 )
+
+[node name="tri_arraymesh" parent="." instance=ExtResource( 5 )]
+position = Vector2( 874, 16 )

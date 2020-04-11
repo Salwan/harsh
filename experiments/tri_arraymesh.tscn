@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://experiments/tri_arraymesh.gd" type="Script" id=2]
+
+[sub_resource type="ArrayMesh" id=1]
+
+[node name="tri_arraymesh" type="MeshInstance2D"]
+mesh = SubResource( 1 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
