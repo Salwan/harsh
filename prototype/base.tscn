@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://prototype/assets/Harsh Viability Pod.png" type="Texture" id=1]
 [ext_resource path="res://prototype/assets/simple_shadow.material" type="Material" id=2]
+[ext_resource path="res://prototype/engine/interactable.gd" type="Script" id=3]
+[ext_resource path="res://prototype/dialog.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53, 10 )
@@ -10,6 +12,9 @@ extents = Vector2( 53, 10 )
 extents = Vector2( 73, 28 )
 
 [node name="base" type="StaticBody2D"]
+script = ExtResource( 3 )
+dialog = ExtResource( 4 )
+dialogChoices = [ "Build..", "Communications..", "Exit" ]
 
 [node name="base" type="Sprite" parent="."]
 position = Vector2( 1, -33 )
@@ -28,9 +33,13 @@ flip_v = true
 position = Vector2( 2, -1 )
 shape = SubResource( 1 )
 
-[node name="interaction" type="Area2D" parent="."]
+[node name="interaction" type="Area2D" parent="." groups=[
+"interaction",
+]]
 position = Vector2( 1, -25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction"]
 position = Vector2( -1, 25 )
 shape = SubResource( 2 )
+[connection signal="body_entered" from="interaction" to="." method="on_interaction_body_entered"]
+[connection signal="body_exited" from="interaction" to="." method="on_interaction_body_exited"]

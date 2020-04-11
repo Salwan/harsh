@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://prototype/assets/menubox.png" type="Texture" id=1]
-[ext_resource path="res://prototype/assets/standard_font.res" type="DynamicFont" id=2]
-[ext_resource path="res://prototype/menu.gd" type="Script" id=3]
+[ext_resource path="res://prototype/assets/standard_font.res" type="DynamicFont" id=1]
+[ext_resource path="res://prototype/assets/menubox.png" type="Texture" id=2]
+[ext_resource path="res://prototype/engine/dialog.gd" type="Script" id=3]
 
 [node name="menu" type="Control"]
 anchor_right = 1.0
@@ -15,14 +15,14 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 128.0
 margin_bottom = 64.0
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="title" type="Label" parent="."]
 margin_left = 4.0
 margin_top = 2.0
 margin_right = 128.0
 margin_bottom = 16.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 text = "Viability v1.56.2"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -33,7 +33,7 @@ margin_left = 8.0
 margin_top = 19.0
 margin_right = 124.0
 margin_bottom = 33.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.411765, 0.337255, 0.337255, 1 )
 text = "Build.."
 __meta__ = {
@@ -45,7 +45,7 @@ margin_left = 8.0
 margin_top = 33.0
 margin_right = 124.0
 margin_bottom = 47.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.411765, 0.337255, 0.337255, 1 )
 text = "Communication"
 __meta__ = {
@@ -57,7 +57,7 @@ margin_left = 8.0
 margin_top = 47.0
 margin_right = 124.0
 margin_bottom = 59.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.411765, 0.337255, 0.337255, 1 )
 text = "Exit"
 __meta__ = {

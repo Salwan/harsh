@@ -2,6 +2,7 @@ extends Node
 
 func _ready():
 	on_set_top_message("")
+	Global.DialogsContainer = $Dialogs
 	Global.connect("set_top_message", self, "on_set_top_message")
 	Global.connect("set_bottom_message", self, "on_set_bottom_message")
 
