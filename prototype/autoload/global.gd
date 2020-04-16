@@ -8,9 +8,21 @@ signal dialog_activated(dialog)
 signal dialog_deactivated(dialog)
 
 var DialogsContainer:Control = null
+var TopMessageStack:Array = []
 
 func _ready():
 	pass
+
+func pushTopMessage(text:String):
+	TopMessageStack.push_back(text)
+	setTopMessage(text)
+
+func popTopMessage():
+	TopMessageStack.pop_back()
+	if len(TopMessageStack) > 0:
+		setTopMessage(TopMessageStack.back())
+	else:
+		clearTopMessage()
 
 func setTopMessage(text:String):
 	emit_signal("set_top_message", text)

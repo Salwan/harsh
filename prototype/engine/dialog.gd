@@ -8,6 +8,7 @@ export(Array, String) var strItems:Array = [ "item 1", "item 2", "item 3" ]
 var iCursor:int = 0
 
 func _ready():
+	on_ready()
 	Global.proxyDialogActivated(self)
 	iCursor = 0
 	for i in len(strItems):
@@ -15,6 +16,7 @@ func _ready():
 		item.text = strItems[i]
 
 func _process(delta):
+	on_process(delta)
 	# items
 	var items_count = 0
 	for i in len(strItems):
@@ -31,6 +33,13 @@ func _process(delta):
 	elif iCursor > items_count - 1:
 		iCursor = 0
 
+# Override to implement
+func on_ready():
+	pass
+
+func on_process(delta):
+	pass
+
 func on_up():
 	iCursor -= 1
 
@@ -44,8 +53,7 @@ func on_right():
 	pass
 
 func on_select():
-	Global.proxyDialogDeactivated(self)
-	queue_free()
+	pass
 
 func on_exit():
 	Global.proxyDialogDeactivated(self)

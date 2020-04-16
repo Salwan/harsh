@@ -87,22 +87,24 @@ func _physics_process(delta:float):
 # EVENTS
 #
 func on_entered_interactable(interactable):
-	Global.setTopMessage("Press `E` to interact")
+	Global.pushTopMessage("Press `E` to interact")
 	assert(interactable)
 	interactableInRange = interactable
 
 func on_exited_interactable(interactable):
-	Global.clearTopMessage()
+	Global.popTopMessage()
 	interactableInRange = null
 
 func on_dialog_activated(dialog:CDialog):
 	dialogStack.push_back(dialog)
 	set_control(EControl.DIALOG)
+	Global.pushTopMessage("Press `E` to select, `Q` to go back")
 
 func on_dialog_deactivated(dialog:CDialog):
 	dialogStack.pop_back()
 	if len(dialogStack) == 0:
 		set_control(EControl.PLAYER)
+	Global.popTopMessage()
 
 
 ################################################################################

@@ -4,7 +4,7 @@
 [ext_resource path="res://prototype/assets/menubox.png" type="Texture" id=2]
 [ext_resource path="res://prototype/engine/dialog.gd" type="Script" id=3]
 
-[node name="dialog" type="Control"]
+[node name="viability_dialog" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
